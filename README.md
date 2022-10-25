@@ -68,3 +68,57 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### JEST Testing
+
+https://github.com/bonnie/udemy-TESTING-LIBRARY
+
+test("renders learn react link", () => {
+render(<App />);
+const linkElement = screen.getByText(/nlearn react/i);
+expect(linkElement).toBeInTheDocument(); //Asertion
+});
+
+### More aassrtion
+
+expect(elemet.textContent).toBe('hello');
+expect(elementsArray).toHaveLength(7);
+
+### jest DOm
+
+comes with createReactAPP
+src/setupTest.js imports it before each test ,makes matchers available
+DOM -based matchers
+e.g toBeVisible() ot toBeChecked()
+
+React testing library(rtl) :- rendering componenets into virtual DOM
+seraching virtual dom
+interact with virtual DOM
+
+npm test :0 euns as npm script and run jest in watch mode
+
+watch mode(wach for changes in file since last commit )
+
+getByRole e.g getByRole('button',{name:/submit/i}) for interractive
+
+getByLabelText()
+getByText() non interactive element
+
+const linkElement = screen.getByRole("link", { name: /learn react/i });
+
+https://www.w3.org/TR/wai-aria/#role_definitions
+
+https://github.com/testing-library/jest-dom
+
+### if direct matcher is not avialble then we use not to reverse it
+
+const checkbox = screen.getByRole("checkbox");
+expect(checkbox).not.toBeChecked();
+
+## eslint-plugin-testing-library eslint-plugin-jest-dom
+
+https://testing-library.com/docs/queries/about/
+https://testing-library.com/docs/queries/about/#priority
+https://testing-library.com/docs/react-testing-library/cheatsheet/
+
+https://github.com/testing-library/user-event
